@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
+    public int score = 0;
+
     private float restartDelay = 5.0f;
     public bool gameHasEnded = false;
 
@@ -20,7 +22,7 @@ public class gameManager : MonoBehaviour
 
     public void EndGame() {
         gameHasEnded = true;
-        Debug.Log("Game Over!");
+        Debug.Log("GAME OVER!!! Score: " + score);
         Invoke("Restart", restartDelay);
     }
 
