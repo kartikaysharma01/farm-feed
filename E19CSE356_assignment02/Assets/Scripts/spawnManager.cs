@@ -17,13 +17,18 @@ public class spawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // // press S and spawn animals
+        if (FindObjectOfType<gameManager>().gameHasEnded) {
+            CancelInvoke();
+        }
+
+        // // press 'S' and spawn animals
         // if (Input.GetKeyDown(KeyCode.S)) {
         //     SpawnRandomAnimal();
         // }        
     }
 
     void SpawnRandomAnimal() {
+        Debug.Log("I am spawning....");
         Vector3 spawnPos = new Vector3(Random.Range(-22,-10), 0, Random.Range(-10, 30));
         int animalIndex = Random.Range(0, animalPrefabs.Length);
         Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);

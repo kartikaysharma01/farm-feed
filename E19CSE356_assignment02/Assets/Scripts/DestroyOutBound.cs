@@ -17,9 +17,10 @@ public class DestroyOutBound : MonoBehaviour
     {
         // Destroy Animals and food if out of bound
         if (transform.position.x > animalBound) {
-            // user could not feed animal
-            Debug.Log("Game Over!");
-            Destroy(gameObject);
+            // user could not feed the animal -- destroy all food/animal object and end game
+            FindObjectOfType<gameManager>().DestroyPrefabsInScene("food");
+            FindObjectOfType<gameManager>().DestroyPrefabsInScene("animal");
+            FindObjectOfType<gameManager>().EndGame(); 
         } else if(transform.position.x < foodBound) {
             Destroy(gameObject);
         }
