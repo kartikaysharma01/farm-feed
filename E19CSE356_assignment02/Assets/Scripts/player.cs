@@ -30,7 +30,8 @@ public class player : MonoBehaviour
 
         // Launch a projectie from the user on clicking space
         if (Input.GetKeyDown(KeyCode.Space)) {
-            Instantiate(foodPrefab, transform.position, foodPrefab.transform.rotation);
+            Vector3 foodPos = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
+            Instantiate(foodPrefab, foodPos, foodPrefab.transform.rotation);
         }
     }
 }
