@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class destroyOnCollision : MonoBehaviour
 {
@@ -16,12 +17,11 @@ public class destroyOnCollision : MonoBehaviour
 
     }
 
-    // destroy both food and animal on collision
+    // destroy both food and animal on collision, also update the score
     void OnTriggerEnter(Collider other) {
-        int s = FindObjectOfType<gameManager>().score;
-        s = s +1;
-        Debug.Log("Score: " + s);
-        FindObjectOfType<gameManager>().score = s;
+        // call update score
+        FindObjectOfType<score>().UpdateScore();
+        // destroy the food and animal
         Destroy(gameObject);
         Destroy(other.gameObject);
     }
