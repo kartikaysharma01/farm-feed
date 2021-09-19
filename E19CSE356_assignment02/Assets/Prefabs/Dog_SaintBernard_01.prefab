@@ -2289,7 +2289,7 @@ GameObject:
   - component: {fileID: -8765070431808234005}
   m_Layer: 0
   m_Name: Dog_SaintBernard_01
-  m_TagString: Untagged
+  m_TagString: animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2400,8 +2400,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.11909854, y: 0.43014386, z: 0.24021782}
-  m_Center: {x: -0.0023691736, y: 0.14191708, z: 0.030153656}
+  m_Size: {x: 0.13990287, y: 0.43014386, z: 0.24021782}
+  m_Center: {x: -0.001082233, y: 0.14191708, z: 0.030153656}
 --- !u!114 &-8765070431808234005
 MonoBehaviour:
   m_ObjectHideFlags: 0

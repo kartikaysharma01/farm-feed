@@ -17,7 +17,11 @@ public class spawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // // press S and spawn animals
+        if (FindObjectOfType<gameManager>().gameHasEnded) {
+            CancelInvoke();
+        }
+
+        // // press 'S' and spawn animals
         // if (Input.GetKeyDown(KeyCode.S)) {
         //     SpawnRandomAnimal();
         // }        
