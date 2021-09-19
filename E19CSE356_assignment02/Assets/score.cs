@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class score : MonoBehaviour
 {
     public Text scoreText;
+    public int scoreCount = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = FindObjectOfType<gameManager>().score.ToString();
+        scoreText.text = scoreCount.ToString();
     }
 
     // Update is called once per frame
@@ -21,12 +22,10 @@ public class score : MonoBehaviour
 
     public void UpdateScore()
     {
-        // get score refernce from gamemanger, update it and assign it to text UI
-        int s = FindObjectOfType<gameManager>().score;
-        s = s +1;
-        Debug.Log("Score: " + s);
-        scoreText.text = s.ToString();
-        FindObjectOfType<gameManager>().score = s;
+        // update score and assign it to text UI
+        scoreCount = scoreCount + 1;
+        Debug.Log("Score: " + scoreCount);
+        scoreText.text = scoreCount.ToString();
     }
 
 }
